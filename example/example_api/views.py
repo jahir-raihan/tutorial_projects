@@ -6,7 +6,6 @@ from rest_framework import status
 from .serializers import BookSerializer
 
 
-
 class ExampleAPIView(APIView):
 
     """
