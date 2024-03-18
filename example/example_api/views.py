@@ -18,7 +18,7 @@ class ExampleAPIView(APIView):
         Get all books along with authors
         """
 
-        books = Book.objects.all()
+        books = Book.objects.all().select_related('autor')
         serialized_books = BookSerializer(books, many=True).data
 
         return Response({"books": serialized_books}, status=status.HTTP_200_OK)
